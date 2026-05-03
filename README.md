@@ -15,8 +15,10 @@ If a driver refuses to connect to 6GHz, it’s often because it hasn't received 
 
 ## Quick Start
 1. Clone the repository.
-2. Update `main.py` with your `TARGET_SSID` and `WIFI_PASSWORD`.
-3. Install the systemd service using `ensure-6ghz.service`.
+2. Update `main.py` with `TARGET_SSID` `WIFI_PASSWORD`, `WIFI_INTERFACE`, and `REGION_CODE`.
+   <br>OR<br>set the environment variables:
+    `ENSURE_6GHZ_TARGET_SSID`, `ENSURE_6GHZ_WIFI_PASSWORD`, `ENSURE_6GHZ_WIFI_INTERFACE`, `ENSURE_6GHZ_REGION_CODE`
+4. Install the systemd service using `ensure-6ghz.service`.
 
 ## Tags
 #linux #ubuntu #wifi-fix #6ghz #network-manager #python #automation

@@ -3,6 +3,7 @@
 import subprocess
 import time
 import socket
+import os
 
 # Configuration
 TARGET_SSID     = "YOUR_SSID"
@@ -11,6 +12,12 @@ WIFI_INTERFACE  = "YOUR_INTERFACE"
 POLL_INTERVAL   = 5
 REGION_CODE     = "YOUR_REGION_CODE"
 CONNECT_TIMEOUT = 30
+
+TARGET_SSID = os.environ.get("ENSURE_6GHZ_TARGET_SSID", TARGET_SSID)
+WIFI_PASSWORD = os.environ.get("ENSURE_6GHZ_WIFI_PASSWORD", WIFI_PASSWORD)
+WIFI_INTERFACE = os.environ.get("ENSURE_6GHZ_WIFI_INTERFACE", WIFI_INTERFACE)
+REGION_CODE = os.environ.get("ENSURE_6GHZ_REGION_CODE", REGION_CODE)
+
 
 def run(cmd: list[str], timeout: int = 15) -> subprocess.CompletedProcess:
     print("$ %s", " ".join(cmd))
