@@ -1,0 +1,20 @@
+# /etc/systemd/system/ensure-6ghz.service
+# systemctl enable ensure-6ghz.service
+# systemctl start ensure-6ghz.service
+# systemctl status ensure-6ghz.service
+
+[Unit]
+Description=Ensure 6ghz Wifi Connection
+After=network.target NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+ExecStart=/usr/bin/python3 /path/to/main.py
+WorkingDirectory=/path/to/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
